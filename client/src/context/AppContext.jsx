@@ -9,7 +9,7 @@ export const AppContext = createContext();
 //create a provider 
 export const AppContextProvider = ({children})=>{
 
-    const currency = import.meta.VITE_CURRENCY;
+    const currency = import.meta.env.VITE_CURRENCY;
     const navigate = useNavigate()
     const [user,setUser] = useState(null)
     const [isSeller,setIsSeller] = useState(false)
@@ -17,6 +17,7 @@ export const AppContextProvider = ({children})=>{
     const [products,setProducts] = useState([])
 
     const [cartItems, setCartItems] = useState({})
+    const [searchQuery, setSearchQuery] = useState({})
     
     //fetch product from assets
     const fetchProducts = async ()=>{
@@ -61,7 +62,7 @@ export const AppContextProvider = ({children})=>{
     },[])
 
     const value = {navigate,user,setUser,setIsSeller,showUserLogin,setShowUserLogin,
-        products,currency,addToCart,updateCartItem,removeFromCart,cartItems}
+        products,currency,addToCart,updateCartItem,removeFromCart,cartItems,searchQuery, setSearchQuery}
     return <AppContext.Provider value={value}>
         {children}
     </AppContext.Provider>
