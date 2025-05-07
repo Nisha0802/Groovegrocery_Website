@@ -8,7 +8,7 @@ import Fotter from '../components/Fotter'
 
 const Home = () => {
   return (
-    <div className='mt-10'>
+    <div className='mt-30'>
         <MainBanner/>
         <Categories/>
         <BestSeller/>

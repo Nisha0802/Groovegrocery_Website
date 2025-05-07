@@ -29,7 +29,7 @@ const ProductDetails = () => {
 
     // if product is available then show this div
     return product && (
-        <div className="mt-12">
+        <div className="mt-30">
             <p>
                 <Link to={'/'}>Home</Link> /
                 <Link to={'/products'}> Products</Link> /
